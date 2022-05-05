@@ -30,7 +30,8 @@ def handleTask(task):
             textFile = open("input.txt", "r", encoding='UTF-8')
         except:
             print("An error happens when reading input.txt")
-        if (textFile != None) & (len(textFile.readlines()) > 0):
+        if (textFile != None) & (len(textFile.read()) > 0):
+            textFile.seek(0)
             contentArr = textFile.readlines()
         randomIndex = random.randint(0, len(contentArr) - 1)
         text = contentArr[randomIndex]
